@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="bunk.js"></script>
+    <link rel="stylesheet" href="bunk.css"/>
+</head>
+
+<body>
+    <div class='container main'>
+        <div class="row">
+            <div class="col-12 ">
+                <p class="para">Bill No</p>
+                <input class="input" type="text" placeholder="enter bill no" id="billNo" />
+                <p class="para">Opeaning Reading</p>
+                <input class="input" type="text" placeholder="opeaning reading" id="opeaningReading" />
+                <p class="para">Closing Reading</p>
+                <input class="input" type="text" placeholder="closing reading" id="closingReading" />
+                <p class="para">Liter Value</p>
+                <input class="input" type="text" placeholder="liter value" id="valueOfLiter" />
+                <p class="para">Total Sale Value:<span id="sale">0</span></p>
+                <button class="btn btn-secondary mr-5" id="calc">Calculate</button>
+                <button class="btn btn-success " onclick="add()">Add to table</button>
+            </div>
+            <div class="col-12">
+                <hr class="hr" />
+                <h1 class="petrol">Petrol</h1>
+                <hr />
+                <table style="width:100%" id="table">
+                    <tr>
+                        <th style="color:#931a25">Bill No</th>
+                        <th style="color:#931a25">Opeaning Reading</th>
+                        <th style="color:#931a25">Closing Reading</th>
+                        <th style="color:#931a25">Sale</th>
+                        <th style="color:#931a25">Petron Price</th>
+                        <th style="color:#931a25">Value</th>
+                    </tr>
+                </table>
+                <hr />
+            </div>
+            <div class="col-12">
+                <button class="btn btn-primary" onclick="save()">save</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

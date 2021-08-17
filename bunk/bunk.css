@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+.main {
+    text-align: center;
+    padding: 5px;
+    background-color: #f8efd4;
+    height: 100vh;
+}
+
+.para {
+    color: #532e1c;
+    font-weight: bold;
+    font-size: 21px;
+    font-family: 'geneva';
+}
+
+.input {
+    border-width: 0px;
+    background-color: #f4f4f2;
+    border-radius: 5px;
+    font-family: 'geneva';
+}
+
+#sale {
+    color: #16697a;
+    font-size: 35px;
+}
+
+.petrol {
+    font-family: 'geneva';
+    font-size: 30px;
+}
+
+.hr {
+    border-radius: 10px;
+}
