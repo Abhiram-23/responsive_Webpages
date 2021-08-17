@@ -1,0 +1,181 @@
+<html>
+
+<head>
+
+</head>
+
+<body>
+
+  
+
+  <!--onsubmit made false to remove unnceccesary reloads --> 
+
+  <form id="bookmarkForm" onsubmit="return false">
+
+    <label for="siteNameInput">site name</label><br>
+
+    <input type="text" id="siteNameInput" name="siteNameInput" value="" /><br>
+
+    <p class="error-message" style="color: red;" id="siteNameErrMsg"></p>
+
+    <label for="siteUrlInput">site URL</label><br>
+
+    <input type="text" id="siteUrlInput" name="siteUrlInput" value="" /> <br>
+
+    <p class="error-message" style="color: red;" id="siteUrlErrMsg"></p>
+
+    <br>
+
+    <button id="submitBtn" onclick="return validateForm()" >submit</button>   
+
+  </form>
+
+  
+
+  <ul id="bookmarksList" class="bookmarks-container"></ul>
+
+
+
+  <script type="text/javascript">
+
+  var ul = document.getElementById("bookmarksList");
+
+
+
+  // validation and submit
+
+  function validateForm(event) {
+
+    var x = document.getElementById("siteNameInput");
+
+    var y = document.getElementById("siteUrlInput");
+
+
+
+    var siteNameError = document.getElementById("siteNameErrMsg")
+
+    siteNameError.innerHTML='';
+
+    var siteUrlError = document.getElementById("siteUrlErrMsg")
+
+    siteUrlError.innerHTML='';
+
+
+
+    // checking for site name
+
+    if (x && x.value == "") {
+
+      siteNameError.innerHTML='site name is mandatory'
+
+    }
+
+
+
+    //checking for site url
+
+    if(y && y.value == ""){
+
+      siteUrlError.innerHTML='Please provide valid URLs to the siteUrlInput'
+
+    }
+
+
+
+    //submitting if both present
+
+    if(x && y && x.value != "" && y.value !=""){
+
+      siteNameError.innerHTML=''
+
+      siteUrlError.innerHTML=''
+
+      var site = {siteName:x.value, siteUrl:y.value}
+
+      console.log(site)
+
+      makeList(site)
+
+      x.value=""
+
+      y.value=""
+
+      return true;
+
+    }
+
+    event.preventDefault()
+
+    return false;
+
+  }
+
+
+
+  // to show the updates list in HTML UI
+
+  function makeList(site){
+
+    
+
+    li = document.createElement('li'); // create a new list item
+
+    var x = document.createElement("p");// create a new p item
+
+    var btn = document.createElement("BUTTON"); // visit button for click to visit url
+
+    var div = document.createElement('DIV') // div to wrap site name and button
+
+
+
+    x.innerHTML= site.siteName
+
+    x.style.margin="0px"
+
+    x.style.paddingRight = "20px"
+
+
+
+    btn.innerHTML="Visit"
+
+    btn.addEventListener("click", function() {
+
+      window.open(site.siteUrl)
+
+    });
+
+
+
+    div.style.display="flex"
+
+    div.appendChild(x)
+
+    div.appendChild(btn)
+
+
+
+    li.appendChild(div); // append the div to the li
+
+    li.style.marginBottom="8px"
+
+
+
+    // append the list item to the ul
+
+    ul.appendChild(li); 
+
+   
+
+
+
+  return ;
+
+  }
+
+  
+
+  </script>
+
+</body>
+
+</html> 
